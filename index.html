@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer Asteroids</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loginScreen" class="screen">
+        <div class="login-container">
+            <h1>ASTEROIDS</h1>
+            <h2>Multiplayer Edition</h2>
+            <form id="connectForm" class="connect-form">
+                <div class="input-group">
+                    <label for="nameInput">Enter Your Name:</label>
+                    <input type="text" id="nameInput" required maxlength="15" placeholder="Your Name">
+                </div>
+                <button type="submit" class="play-button">PLAY</button>
+            </form>
+            <div class="instructions">
+                <h3>How to Play:</h3>
+                <ul>
+                    <li>← / → keys to rotate</li>
+                    <li>↑ key to thrust</li>
+                    <li>SPACE to fire</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="gameScreen" class="screen" style="display: none;">
+        <canvas id="gameCanvas"></canvas>
+    </div>
+    
+    <script src="client.js"></script>
+</body>
+</html> 

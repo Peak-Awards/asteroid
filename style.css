@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Screen styles */
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login screen */
+.login-container {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #0af;
+    border-radius: 10px;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 200, 255, 0.5);
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 20px rgba(0, 200, 255, 0.5);
+    }
+    to {
+        box-shadow: 0 0 30px rgba(0, 200, 255, 0.8);
+    }
+}
+
+.login-container h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #0af;
+    text-shadow: 0 0 10px rgba(0, 200, 255, 0.7);
+}
+
+.login-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #0ff;
+}
+
+.connect-form {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #0ff;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(0, 30, 60, 0.8);
+    border: 1px solid #0af;
+    color: #fff;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.play-button {
+    background: linear-gradient(to bottom, #0af, #08f);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+}
+
+.play-button:hover {
+    background: linear-gradient(to bottom, #0cf, #09f);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 200, 255, 0.8);
+}
+
+.instructions {
+    margin-top: 20px;
+    background: rgba(0, 30, 60, 0.5);
+    border-radius: 5px;
+    padding: 15px;
+    text-align: left;
+}
+
+.instructions h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #0ff;
+}
+
+.instructions ul {
+    list-style-type: none;
+}
+
+.instructions li {
+    margin: 8px 0;
+    font-size: 0.9rem;
+    color: #cff;
+}
+
+/* Game screen */
+#gameCanvas {
+    display: block;
+    background-color: #000;
+    width: 1024px;
+    height: 768px;
+    margin: 0 auto;
+    border: 2px solid #0af;
+    box-shadow: 0 0 20px rgba(0, 200, 255, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    #gameCanvas {
+        width: 100%;
+        height: auto;
+        max-height: 100vh;
+    }
+}
+
+@media (max-width: 600px) {
+    .login-container {
+        padding: 20px;
+    }
+    
+    .login-container h1 {
+        font-size: 2rem;
+    }
+    
+    .login-container h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Background stars animation */
+@keyframes starsAnimation {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(2000px);
+    }
+}
+
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.game-container {
+    position: relative;
+}
+
+canvas {
+    background-color: #000;
+    display: block;
+    border: 2px solid #fff;
+}
+
+.game-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.score, .lives {
+    padding: 5px;
+}
+
+/* Add styling for the reconnect message */
+.reconnect-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    border: 1px solid #00ffff;
+}
+
+.reconnect-message p {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.reconnect-message button {
+    background: linear-gradient(to bottom, #00aaff, #0077ff);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.reconnect-message button:hover {
+    background: linear-gradient(to bottom, #00ccff, #0088ff);
+    transform: scale(1.05);
+} 
